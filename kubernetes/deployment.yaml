@@ -13,8 +13,8 @@ spec:
         app: login-app
     spec:
       containers:
-      - name: login-app
-        image: your-dockerhub/login-app:latest
+      - name: login-ingress
+        image: your-dockerhub/login-ingress:latest
         ports:
         - containerPort: 80
 
