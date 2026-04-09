@@ -6,6 +6,12 @@
 - CI/CD with GitHub Actions
 - Docker
 
+## 📁 Project Structure
+- `k8s/` : raw Kubernetes manifests for debugging or learning
+- `helm/python-app/` : production-ready Helm chart
+- `app/` : Python application source and Dockerfile
+- `scripts/` : deployment and cleanup helper scripts
+
 ---
 
 ## 🐳 Run Local

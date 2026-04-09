@@ -28,4 +28,4 @@ jobs:
       - name: 🚀 Deploy with Helm
         run: |
           export KUBECONFIG=./kubeconfig
-          helm upgrade --install myapp ./helm/project-app
+          helm upgrade --install myapp ./helm/python-app

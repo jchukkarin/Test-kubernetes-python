@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "project-app.fullname" . }}
+  name: {{ include "python-app.fullname" . }}
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: {{ include "project-app.name" . }}
+    app: {{ include "python-app.name" . }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 80

@@ -9,6 +9,6 @@ docker build -t arm0614903790/login-app:latest ./app
 docker push arm0614903790/login-app:latest
 
 # deploy ด้วย helm
-helm upgrade --install myapp ./helm/project-app
+helm upgrade --install myapp ./helm/python-app
 
 echo " Deploy complete!"

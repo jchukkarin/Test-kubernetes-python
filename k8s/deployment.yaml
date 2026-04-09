@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+        imagePullPolicy: Always # เพิ่มบรรทัดนี้เพื่อบังคับให้ตรวจสอบการดึงใหม่เสมอ
+
+        envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: app-secret
+
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data/db
+
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: pvc-data

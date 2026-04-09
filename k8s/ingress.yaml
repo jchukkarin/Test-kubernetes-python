@@ -1,20 +1,18 @@
-{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "project-app.fullname" . }}
+  name: login-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: {{ .Values.ingress.host }}
+  - host: login.your-domain.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: {{ include "project-app.fullname" . }}
+            name: mongodb
             port:
-              number: 80
-{{- end }}
+              number: 27017
