@@ -1,0 +1,32 @@
+image:
+  repository: arm0614903790/login-app
+  tag: latest
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: login.your-domain.com
+
+secret:
+  SECRET_KEY: mysecretkey
+
+config:
+  APP_ENV: production
+
+pvc:
+  size: 1Gi
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  cpu: 70
+
+serviceAccount:
+  create: true
+  name: ""
