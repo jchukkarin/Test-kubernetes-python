@@ -6,4 +6,4 @@ helm uninstall myapp
 
 kubectl delete all --all
 
-echo "✅ Cleanup complete!"
+echo " Cleanup complete!"

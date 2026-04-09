@@ -11,4 +11,4 @@ docker push arm0614903790/login-app:latest
 # deploy ด้วย helm
 helm upgrade --install myapp ./helm/project-app
 
-echo "✅ Deploy complete!"
+echo " Deploy complete!"
